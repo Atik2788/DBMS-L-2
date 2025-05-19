@@ -28,3 +28,4 @@ VALUES
 SELECT * FROM students ORDER BY first_name ASC;
 SELECT * FROM students ORDER BY first_name DESC;
 SELECT DISTINCT country from students;
+

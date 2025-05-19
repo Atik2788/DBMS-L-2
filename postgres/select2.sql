@@ -38,3 +38,13 @@ VALUES
 SELECT * FROM students2;
 
 SELECT DISTINCT  grade from students2;
+
+SELECT * FROM students2 age
+    WHERE country = 'USA';
+
+SELECT * FROM students2
+    WHERE (grade = 'A' OR grade = 'B') AND age= 20;
+
+SELECT upper(first_name), * FROM students2;
+
+SELECT concat(first_name,' ', last_name) FROM students2;
