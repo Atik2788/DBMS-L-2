@@ -48,3 +48,17 @@ SELECT * FROM students2
 SELECT upper(first_name), * FROM students2;
 
 SELECT concat(first_name,' ', last_name) FROM students2;
+
+SELECT length(first_name) FROM students2;
+
+SELECT count(*) FROM students2;
+
+SELECT max(length(first_name)) FROM students2;
+
+SELECT * from students2
+    WHERE NOT country = 'USA'
+
+SELECT * FROM students2
+    WHERE email IS NOT NULL;
+
+SELECT COALESCE(email, 'email not provided'), first_name FROM students2;
