@@ -9,3 +9,5 @@ INSERT INTO timez VALUES('2024-01-12 10:45:00', '2024-01-12 10:45:00')
 
 SELECT now()::date;
 SELECT now()::time;
+
+SELECT to_char(now(), 'dd/mm/yyyy')
