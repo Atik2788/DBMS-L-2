@@ -11,3 +11,16 @@ SELECT now()::date;
 SELECT now()::time;
 
 SELECT to_char(now(), 'dd/mm/yyyy')
+
+SELECT to_char(now(), 'MONTH')
+
+SELECT to_char(now(), 'Month')
+
+SELECT to_char(now(), 'DDD')
+
+SELECT CURRENT_DATE - INTERVAL '1 year';
+
+SELECT age(CURRENT_DATE, '2000-09-14')
+
+-- get a new column name is age and give the age of every student
+SELECT *, age(CURRENT_DATE, dob) from students2;
