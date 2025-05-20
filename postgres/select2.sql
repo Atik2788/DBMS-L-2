@@ -61,4 +61,46 @@ SELECT * from students2
 SELECT * FROM students2
     WHERE email IS NOT NULL;
 
-SELECT COALESCE(email, 'email not provided'), first_name FROM students2;
+SELECT COALESCE(email, 'email not provided') as "Email", first_name FROM students2;
+
+SELECT * FROM students2 
+    WHERE country IN ('USA', 'UK');
+SELECT * FROM students2 
+    WHERE country NOT IN ('USA', 'UK');
+SELECT * FROM students2 
+    WHERE age BETWEEN 19 and 22;
+SELECT * FROM students2 
+    WHERE dob BETWEEN '2004-01-01' and '2005-01-01' ORDER BY dob;
+SELECT * FROM students2 
+    WHERE first_name LIKE '%am';
+SELECT * FROM students2 
+    WHERE first_name LIKE 'A%';
+SELECT * FROM students2 
+    WHERE first_name LIKE '__a%';
+
+SELECT * FROM students2 
+    WHERE first_name ILIKE 'a%';
+
+SELECT * FROM students2 
+    WHERE country NOT IN ('USA', 'UK') LIMIT 5;
+
+SELECT * FROM students2 
+    WHERE country NOT IN ('USA', 'UK') LIMIT 5 OFFSET 2;
+SELECT * from students2 LIMIT 5 OFFSET 5*0;
+SELECT * from students2 LIMIT 5 OFFSET 5*1;
+SELECT * from students2 LIMIT 5 OFFSET 5*2;
+
+
+SELECT * from students2;
+
+
+DELETE FROM students2 
+    WHERE grade = 'A' AND blood_group = 'O+';
+
+
+UPDATE students2
+    set email = 'Not provided' 
+    WHERE email is NULL;
+UPDATE students2
+    set age= age+10 
+    WHERE student_id = 3 ;
