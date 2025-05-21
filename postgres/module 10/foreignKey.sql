@@ -7,7 +7,7 @@ CREATE TABLE "user"(
 CREATE TABLE post(
     id SERIAL PRIMARY KEY,
     title TEXT NOT NUll,
-    user_id INTEGER REFERENCES "user"(id)
+    user_id INTEGER REFERENCES "user"(id) on Delete set DEFAULT DEFAULT 2
 )
 
 
@@ -28,8 +28,16 @@ INSERT INTO post (title, user_id) VALUES
 ('Nodi''s wisdom always leaves me inspired. 📚', 4);
 
 SELECT *  from post;
+
 ALTER TABLE post
     alter COLUMN user_id set NOT NULL;
 
 INSERT INTO post(title, user_id) VALUES('test', NULL)
 
+DROP TABLE post;
+DROP TABLE "user";
+
+
+
+DELETE from "user"
+    WHERE id = 4;
