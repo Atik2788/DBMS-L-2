@@ -24,3 +24,7 @@ SELECT age(CURRENT_DATE, '2000-09-14')
 
 -- get a new column name is age and give the age of every student
 SELECT *, age(CURRENT_DATE, dob) from students2;
+
+SELECT extract (month from '2024-01-25'::date)
+
+    
