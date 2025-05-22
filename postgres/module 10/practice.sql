@@ -59,3 +59,29 @@ INSERT INTO depertments2 (depertment_name) VALUES
     ('Ella King', 8, 98000.00, '2018-12-28'),
     ('Nathan Rivera', 9, 74000.50, '2020-07-15'),
     ('Mia Roberts', 10, 70000.25, '2021-11-20');
+
+SELECT * FROM employees2
+    JOIN depertments2 on employees2.depertment_id = depertments2.depertment_id;
+
+
+SELECT * FROM employees2
+    JOIN depertments2 USING(depertment_id);
+
+
+
+SELECT depertment_name, round(avg(salary)) as avg_salary FROM employees2
+    JOIN depertments2 USING(depertment_id)    
+    GROUP BY depertment_name;
+
+SELECT depertment_name, count(employee_id) as employeeCount FROM employees2
+    JOIN depertments2 USING(depertment_id) 
+    GROUP BY depertment_name;
+
+SELECT depertment_name, round(avg(salary)) as avg_salary FROM employees2
+    JOIN depertments2 USING(depertment_id) 
+    GROUP BY depertment_name
+    ORDER BY avg_salary DESC
+    LIMIT 1;
+
+SELECT EXTRACT(YEAR from hire_date) as hire_year, count(*) as employee_number FROM employees2
+    GROUP BY hire_year;
